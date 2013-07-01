@@ -1,0 +1,15 @@
+.btn{
+  display: inline-block;
+  padding: @btn-boxPaddingTopBottom 30px;
+  border-radius: 3px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  .colorBtn(#27ae60);
+  &:hover{
+    color: #fff;
+  }
+  &:active{
+    -webkit-transform: translateY(@btn-shadowSize);
+  }
+}

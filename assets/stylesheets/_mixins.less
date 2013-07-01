@@ -1,0 +1,71 @@
+.size (@w, @h) {
+  width: @w;
+  height: @h;
+}
+
+.square (@s) {
+  .size (@s, @s);
+}
+
+.noGap () {
+    font-size: 0;
+    line-height: 0;
+}
+
+.reGap (@fontsize: @base-fontsize, @lineheight: @base-lineheight) {
+    font-size: @fontsize;
+    line-height: @lineheight;
+}
+
+.animation (@val:none) {
+  -webkit-animation: @val;
+  -moz-animation: @val; // FF < 16
+  //-ms-animation: @val;
+  -o-animation: @val; // O < 12.1
+  animation: @val;
+}
+
+.transform-origin (@val:50%){
+  -webkit-transform-origin: @val;
+  -moz-transform-origin: @val; //FF < 16
+  // -ms-transform-origin: @val; //IE < 9
+  -o-transform-origin: @val;
+  transform-origin: @val;
+}
+
+.transition (@value1,@value2:X,...) {
+  @value: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+  -webkit-transition: @value; // C < 26
+  -moz-transition: @value;    // FF < 16
+  //-ms-transition: @value;
+  -o-transition: @value;      // O < 12.1
+  transition: @value;
+}
+
+.transition-delay (@val) {
+  -webkit-transition-delay: @val; // C < 26
+  -moz-transition-delay: @val;    // FF < 16
+  //-ms-transition-delay: @val;
+  -o-transition-delay: @val;      // O < 12.1
+  transition-delay: @val;
+}
+
+.transform (@val:none) {
+  -webkit-transform: @val;
+  -moz-transform: @val; //FF < 16
+  // -ms-transform: @val; //IE < 9
+  -o-transform: @val;
+  transform: @val;
+}
+
+.colorBtn (@color) {
+  background: @color;
+  &:hover{
+    box-shadow: 0 -@btn-shadowSize darken(@color, 10%) inset;
+  }
+  &:active{
+    box-shadow: none;
+    padding-bottom: @btn-boxPaddingTopBottom - @btn-shadowSize;
+    background: darken(@color, 2%);
+  }
+}
