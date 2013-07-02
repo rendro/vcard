@@ -23,21 +23,21 @@ module.exports = (grunt) ->
         dest: 'tmp/index.html'
       error403:
         src: [
-          '_partials/header.html'
+          '_partials/header-error.html'
           'error/403.html'
           '_partials/footer.html'
         ]
         dest: 'tmp/403.html'
       error404:
         src: [
-          '_partials/header.html'
+          '_partials/header-error.html'
           'error/404.html'
           '_partials/footer.html'
         ]
         dest: 'tmp/404.html'
       error500:
         src: [
-          '_partials/header.html'
+          '_partials/header-error.html'
           'error/500.html'
           '_partials/footer.html'
         ]
