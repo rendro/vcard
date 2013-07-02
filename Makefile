@@ -3,6 +3,7 @@ dist:
 	make static
 	make css
 	make js
+	make html
 
 static:
 	mkdir -p _site/assets/images
@@ -10,7 +11,6 @@ static:
 	cp -R assets/images/ _site/assets/images/
 	cp favicon.ico _site/favicon.ico
 	cp .htaccess _site/.htaccess
-	make html
 
 js:
 	mkdir -p _site/assets/javascripts/ext
