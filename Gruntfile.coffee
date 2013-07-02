@@ -58,7 +58,7 @@ module.exports = (grunt) ->
           }
           {
             expand: true
-            src: ['assets/images/*']
+            src: ['assets/images/**/*']
             dest: '_site/'
           }
           {
