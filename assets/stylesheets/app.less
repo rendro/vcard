@@ -1,6 +1,6 @@
 @import '_vars';
 @import '_mixins';
-// @import '_keyframes';
+@import '_keyframes';
 @import 'normalize';
 // @import 'loader';
 
@@ -13,14 +13,7 @@ html{
     font-size: @base-fontsize;
     line-height: @base-lineheight;
     min-height: 100%;
-}
-
-body{
-    background: #fff;
-    .transition (background-color @short ease-out);
-    &.show{
-        background-color: @bodyBgColor;
-    }
+    background: @bodyBgColor;
 }
 
 
@@ -33,8 +26,8 @@ h1{
     text-transform: lowercase;
     small{
         display: block;
-        .reGap;
         color: #7f8c8d;
+        .reGap;
     }
 }
 
@@ -73,53 +66,27 @@ a{
 
 .app{
     h1{
-        opacity: 0;
-        .transform (scale(.975, .975));
-        -webkit-transition: opacity .57s ease-in-out, -webkit-transform .57s ease-in-out;
-        -moz-transition: opacity .57s ease-in-out, -moz-transform .57s ease-in-out;
-        -o-transition: opacity .57s ease-in-out, -o-transform .57s ease-in-out;
-        transition: opacity .57s ease-in-out, transform .57s ease-in-out;
+        .animation(logo .57s 1 @initialDelay ease-in-out both);
     }
-    li {
-        opacity: 0;
-        .transform (translate3d(0, 20px, 0));
-        -webkit-transition: opacity @medium ease-out @long, -webkit-transform @medium ease-out @long;
-        -moz-transition: opacity @medium ease-out @long, -moz-transform @medium ease-out @long;
-        -o-transition: opacity @medium ease-out @long, -o-transform @medium ease-out @long;
-        transition: opacity @medium ease-out @long, transform @medium ease-out @long;
+    li{
+        .animation(link .57s 1 @initialDelay ease-in-out both);
         &:nth-child(1) {
-            .transition-delay (@long + 0 * .1s);
+            .animation-delay(@long + @initialDelay + 0 * .1s);
         }
         &:nth-child(2) {
-            .transition-delay (@long + 1 * .1s);
+            .animation-delay(@long + @initialDelay + 1 * .1s);
         }
         &:nth-child(3) {
-            .transition-delay (@long + 2 * .1s);
+            .animation-delay(@long + @initialDelay + 2 * .1s);
         }
         &:nth-child(4) {
-            .transition-delay (@long + 3 * .1s);
+            .animation-delay(@long + @initialDelay + 3 * .1s);
         }
         &:nth-child(5) {
-            .transition-delay (@long + 4 * .1s);
+            .animation-delay(@long + @initialDelay + 4 * .1s);
         }
     }
 }
-
-.show {
-    .app{
-        h1{
-            opacity: 1;
-            .transform (scale(1, 1));
-        }
-        li {
-            opacity: 1;
-            .transform (translate3d(0, 0, 0));
-        }
-    }
-}
-
-
-
 
 @media screen and (max-width: 600px) {
     .app{

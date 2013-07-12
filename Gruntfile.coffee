@@ -10,9 +10,6 @@ module.exports = (grunt) ->
       app:
         src: 'assets/javascripts/app.js'
         dest: 'tmp/assets/javascripts/app.min.js'
-      modernizr:
-        src: 'assets/javascripts/ext/modernizr.js'
-        dest: 'tmp/assets/javascripts/ext/modernizr.js'
     concat:
       index:
         src: [
@@ -53,17 +50,7 @@ module.exports = (grunt) ->
         files: [
           {
             expand: true
-            src: ['assets/javascripts/ext/modernizr.js']
-            dest: 'tmp/'
-          }
-          {
-            expand: true
-            src: ['assets/images/**/*']
-            dest: '_site/'
-          }
-          {
-            expand: true
-            src: ['.htaccess']
+            src: ['.htaccess', 'favicon.ico', 'assets/images/**/*']
             dest: '_site/'
           }
         ]

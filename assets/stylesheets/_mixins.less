@@ -19,42 +19,50 @@
 
 .animation (@val:none) {
   -webkit-animation: @val;
-  -moz-animation: @val; // FF < 16
+  // -moz-animation: @val; // FF < 16
   //-ms-animation: @val;
-  -o-animation: @val; // O < 12.1
+  // -o-animation: @val; // O < 12.1
   animation: @val;
+}
+
+.animation-delay (@val:none) {
+  -webkit-animation-delay: @val;
+  // -moz-animation-delay: @val; // FF < 16
+  //-ms-animation-delay: @val;
+  // -o-animation-delay: @val; // O < 12.1
+  animation-delay: @val;
 }
 
 .transform-origin (@val:50%){
   -webkit-transform-origin: @val;
-  -moz-transform-origin: @val; //FF < 16
+  // -moz-transform-origin: @val; //FF < 16
   // -ms-transform-origin: @val; //IE < 9
-  -o-transform-origin: @val;
+  // -o-transform-origin: @val;
   transform-origin: @val;
 }
 
 .transition (@value1,@value2:X,...) {
   @value: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
   -webkit-transition: @value; // C < 26
-  -moz-transition: @value;    // FF < 16
+  // -moz-transition: @value;    // FF < 16
   //-ms-transition: @value;
-  -o-transition: @value;      // O < 12.1
+  // -o-transition: @value;      // O < 12.1
   transition: @value;
 }
 
 .transition-delay (@val) {
   -webkit-transition-delay: @val; // C < 26
-  -moz-transition-delay: @val;    // FF < 16
+  // -moz-transition-delay: @val;    // FF < 16
   //-ms-transition-delay: @val;
-  -o-transition-delay: @val;      // O < 12.1
+  // -o-transition-delay: @val;      // O < 12.1
   transition-delay: @val;
 }
 
 .transform (@val:none) {
   -webkit-transform: @val;
-  -moz-transform: @val; //FF < 16
+  // -moz-transform: @val; //FF < 16
   // -ms-transform: @val; //IE < 9
-  -o-transform: @val;
+  // -o-transform: @val;
   transform: @val;
 }
 
