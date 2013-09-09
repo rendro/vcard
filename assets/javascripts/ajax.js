@@ -15,9 +15,7 @@ var ajax = (function () {
         }
     }
     ajaxRequest.onreadystatechange = function() {
-        if (ajaxRequest.readyState == 4) {
-           // Prob want to do some error or response checking, but for
-           // this example just pass the responseText to our callback function
+        if (ajaxRequest.readyState === 4) {
            callback(ajaxRequest.responseText);
         }
     };

@@ -9,6 +9,7 @@
     "grunt-html-smoosher": "~0.1.1",
     "grunt-contrib-less": "~0.6.1",
     "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-watch": "~0.4.4"
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-htmlmin": "~0.1.3"
   }
 }

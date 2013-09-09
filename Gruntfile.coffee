@@ -61,6 +61,15 @@ module.exports = (grunt) ->
           '_site/error/403.html': 'tmp/403.html'
           '_site/error/404.html': 'tmp/404.html'
           '_site/error/500.html': 'tmp/500.html'
+    htmlmin:
+      dist:
+        options:
+          removeComments: true
+          collapseWhitespace: true
+          removeRedundantAttributes: true
+          removeEmptyAttributes: true
+        files:
+          '_site/index.html': '_site/index.html'
     watch:
       files: [
         '_partials/**/*'
@@ -79,6 +88,16 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-html-smoosher'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-contrib-htmlmin'
 
   # Default task(s).
-  grunt.registerTask 'default', ['clean:before', 'copy', 'concat', 'uglify', 'less', 'smoosher', 'clean:after']
+  grunt.registerTask 'default', [
+    'clean:before'
+    'copy'
+    'concat'
+    'uglify'
+    'less'
+    'smoosher'
+    'htmlmin'
+    'clean:after'
+  ]
