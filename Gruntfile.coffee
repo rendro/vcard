@@ -70,6 +70,9 @@ module.exports = (grunt) ->
           removeEmptyAttributes: true
         files:
           '_site/index.html': '_site/index.html'
+          '_site/error/403.html': '_site/error/403.html'
+          '_site/error/404.html': '_site/error/404.html'
+          '_site/error/500.html': '_site/error/500.html'
     watch:
       files: [
         '_partials/**/*'
