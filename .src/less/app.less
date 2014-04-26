@@ -35,8 +35,18 @@ body {
 	font: @fontsize / @lineheight 'Source Sans Pro', Helvetica, sans-serif;
 }
 
-h1,h2{
+h1,h2, p{
 	margin: 0;
+}
+
+p{
+	margin-bottom: .8em;
+	+ p{
+		margin-bottom: .3em;
+	}
+	a{
+		text-decoration: none;
+	}
 }
 
 @size: 165px;
@@ -107,12 +117,12 @@ small{
 	&:extend(.front);
 	transform: rotateY(180deg) translate3d(0, 0, @cardDepth / 2);
 
-	padding: 40px 20px 20px;
+	padding: 20px;
 	text-align: left;
 	background: @white;
 	color: @black;
-
-	font-size: @fontsize;
+	font-size: @small-fontsize;
+	text-transform: none;
 }
 
 a{
@@ -138,6 +148,19 @@ a{
 	}
 }
 
+ul{
+	margin: 0;
+	padding: 0;
+	text-align: justify;
+	&::after{
+		content: "";
+		display: inline-block;
+		width: 100%;
+	}
+	li{
+		display: inline;
+	}
+}
 
 @media @mq-tablet{
 	@size: 240px;
@@ -165,7 +188,8 @@ a{
 	}
 
 	.back{
-		font-size: 24px;
+		padding-top: 40px;
+		font-size: (@small-fontsize * 1.4);
 	}
 
 	small{
