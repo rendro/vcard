@@ -28,9 +28,9 @@ body, html {
 
 body {
 	perspective: 750px;
-	background-image: -webkit-radial-gradient(circle, #fff, lighten(@darkblue, 10%));
-	background-image: -moz-radial-gradient(circle, #fff, lighten(@darkblue, 10%));
-	background-image: radial-gradient(circle, #fff, lighten(@darkblue, 10%));
+	background-image: -webkit-radial-gradient(circle, #fff, lighten(@front-color, 10%));
+	background-image: -moz-radial-gradient(circle, #fff, lighten(@front-color, 10%));
+	background-image: radial-gradient(circle, #fff, lighten(@front-color, 10%));
 	cursor: move;
 	font: @fontsize / @lineheight 'Source Sans Pro', Helvetica, sans-serif;
 }
@@ -49,11 +49,6 @@ p{
 	}
 }
 
-@size: 165px;
-@cardWidth: (85 / 55 * @size);
-@cardHeight: @size;
-@cardDepth: 2px;
-
 .card{
 	position: absolute;
 	top: 50%;
@@ -67,7 +62,7 @@ p{
 
 .side{
 	position: absolute;
-	background: #be2221;
+	background: @side-color;
 
 	&:first-of-type{
 		.size(@cardWidth, @cardDepth);
@@ -97,7 +92,7 @@ p{
 	transform: translate3d(0, 0, @cardDepth / 2);
 
 	padding-top: 40px;
-	background: @black;
+	background: @front-color;
 	color: @white;
 	font-size: 20px;
 	font-weight: 300;
