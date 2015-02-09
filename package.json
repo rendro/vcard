@@ -3,6 +3,9 @@
   "version": "1.0.1",
   "description": "Peronal homepage of Robert Fleischmann",
   "author": "Robert Fleischmann",
+  "scripts": {
+    "build": "gulp build"
+  },
   "private": true,
   "devDependencies": {
     "gulp": "^3.6.1",
